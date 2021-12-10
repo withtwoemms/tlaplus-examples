@@ -4,6 +4,10 @@ VARIABLE color
 
 AcceptableColor == color \in {"red", "green", "yellow"}
 
+AlwaysAcceptableColor == [] AcceptableColor
+\* (for use as spec PROPERTY where state "must always be an acceptable color")
+
+
 Init == color = "red"
 
 TurnGreen ==
@@ -18,9 +22,9 @@ TurnRed ==
     /\ color = "yellow"
     /\ color' = "red"
 
+
 Next ==
     \/ TurnGreen
     \/ TurnYellow
     \/ TurnRed
-
 ====
